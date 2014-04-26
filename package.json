@@ -1,6 +1,6 @@
 {
   "name": "lamassu-bitstamp",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Lamassu Bitstamp ticker and trader",
   "main": "lib/index.js",
   "scripts": {
@@ -8,21 +8,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/gangleri/lamassu-bitstamp.git"
+    "url": "https://github.com/lamassu/lamassu-bitstamp.git"
   },
   "keywords": [
     "Lamassu",
     "Bitstamp",
     "Bitcoin"
   ],
-  "author": "Peter Elger (http://nearform.com/)",
-  "contributors": [
-    "Peter Elger <elger.peter@gmail.com> (http://peterelger.com/)",
-    "Alan Braddley <alan@gangleri.net>"
-  ],
-  "license": "MIT",
+  "author": "Lamassu (https://lamassu.is)",
+  "license": "unlicense",
   "bugs": {
-    "url": "https://github.com/gangleri/lamassu-bitstamp/issues"
+    "url": "https://github.com/lamassu/lamassu-bitstamp/issues"
   },
   "devDependencies": {
     "tap": "~0.4.8"
