@@ -4,7 +4,7 @@
   "description": "Lamassu Bitstamp ticker and trader",
   "main": "lib/index.js",
   "scripts": {
-    "test": "tap ./test"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,8 @@
     "url": "https://github.com/lamassu/lamassu-bitstamp/issues"
   },
   "devDependencies": {
-    "tap": "~0.4.8"
+    "chai": "^1.9.1",
+    "mocha": "^1.21.4"
   },
   "dependencies": {
     "bitstamp": "lamassu/bitstamp",
