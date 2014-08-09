@@ -24,7 +24,7 @@
     "tap": "~0.4.8"
   },
   "dependencies": {
-    "bitstamp": "~0.1.5",
+    "bitstamp": "lamassu/bitstamp",
     "async": "~0.2.10"
   }
 }
