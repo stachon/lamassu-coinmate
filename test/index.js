@@ -44,7 +44,7 @@ describe('Bitstamp Plugin', function () {
     // NOTE: MAX timeout for each test
     this.timeout(2000);
 
-    it('Read ticker in USD', function (done) {
+    it('should read ticker in USD', function (done) {
       var currencies = ['USD'];
 
       ticker.ticker(currencies, function (err, results) {
@@ -57,7 +57,7 @@ describe('Bitstamp Plugin', function () {
       });
     });
 
-    it('Read ticker in EUR', function (done) {
+    it('should read ticker in EUR', function (done) {
       var currencies = ['EUR'];
 
       ticker.ticker(currencies, function (err, results) {
@@ -70,7 +70,7 @@ describe('Bitstamp Plugin', function () {
       });
     });
 
-    it('Read ticker in ILS', function (done) {
+    it('should read ticker in ILS', function (done) {
       var currencies = ['ILS'];
 
       ticker.ticker(currencies, function (err, results) {
@@ -81,7 +81,7 @@ describe('Bitstamp Plugin', function () {
       });
     });
 
-    it('Read ticker in USD, EUR', function (done) {
+    it('should read ticker in USD, EUR', function (done) {
       var currencies = ['USD', 'EUR'];
 
       ticker.ticker(currencies, function (err, results) {
@@ -95,7 +95,7 @@ describe('Bitstamp Plugin', function () {
       });
     });
 
-    it('Read ticker in EUR, ILS', function (done) {
+    it('should read ticker in EUR, ILS', function (done) {
       var currencies = ['EUR', 'ILS'];
 
       ticker.ticker(currencies, function (err, results) {
@@ -106,7 +106,7 @@ describe('Bitstamp Plugin', function () {
       });
     });
 
-    it('Read ticker in USD, EUR, ILS', function (done) {
+    it('should read ticker in USD, EUR, ILS', function (done) {
       var currencies = ['USD', 'EUR', 'ILS'];
 
       ticker.ticker(currencies, function (err, results) {
@@ -117,7 +117,7 @@ describe('Bitstamp Plugin', function () {
       });
     });
 
-    it('Read ticker with empty array', function (done) {
+    it('should read ticker with empty array', function (done) {
       var currencies = [];
 
       ticker.ticker(currencies, function (err, results) {
