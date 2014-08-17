@@ -19,7 +19,7 @@ var REQUIRED_MOCK_PROPERTIES = [
 ];
 
 
-if(pluginConfig.supports('trader')) {
+if(pluginConfig.supports('trader') && !process.env.TRAVIS) {
   describe(pluginConfig.NAME + ' Trader', function() {
     var configMock = null;
     var traderPlugin = require('../index');

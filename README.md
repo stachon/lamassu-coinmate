@@ -1,6 +1,8 @@
 lamassu-bitstamp
 ================
 
+[![Build Status](https://travis-ci.org/lamassu/lamassu-bitstamp.svg)](https://travis-ci.org/lamassu/lamassu-bitstamp)
+
 Lamassu Bitstamp ticker and trader
 
 
