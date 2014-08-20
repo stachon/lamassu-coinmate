@@ -1,8 +1,8 @@
 {
   "name": "lamassu-bitstamp",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Lamassu Bitstamp ticker and trader",
-  "main": "lib/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
@@ -25,7 +25,8 @@
     "mocha": "^1.21.4"
   },
   "dependencies": {
-    "bitstamp": "lamassu/bitstamp",
-    "async": "~0.2.10"
+    "async": "~0.2.10",
+    "lodash": "^2.4.1",
+    "wreck": "^3.0.0"
   }
 }
