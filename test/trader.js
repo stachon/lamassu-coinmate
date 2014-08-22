@@ -1,3 +1,5 @@
+/* global describe, it, before, afterEach */
+
 'use strict';
 
 var should        = require('chai').should();
@@ -9,7 +11,7 @@ var pluginConfig  = require('../config');
 function requireFresh(file) {
   delete require.cache[require.resolve(file)];
   return require(file);
-};
+}
 
 
 var REQUIRED_MOCK_PROPERTIES = [
