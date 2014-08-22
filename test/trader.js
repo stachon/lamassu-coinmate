@@ -7,7 +7,7 @@ var pluginConfig  = require('../config');
 
 // re-reads *uncached* version of config JSON
 function requireFresh(file) {
-  delete require.cache[require.resolve(file)]
+  delete require.cache[require.resolve(file)];
   return require(file);
 };
 
@@ -123,16 +123,6 @@ if(pluginConfig.SUPPORTED_MODULES.indexOf('trader') !== -1 && !process.env.TRAVI
           });
         });
 
-        it('should fail when price not provided', function(done) {
-          traderPlugin.purchase(minimalAmount, null, function(err) {
-            should.exist(err);
-
-            err.message.should.have.string('price');
-
-            done();
-          });
-        });
-
         it('should fail when provided price is too high', function(done) {
 
           var tooHighPrice = lastUsdPrice * 1.2;
@@ -183,16 +173,6 @@ if(pluginConfig.SUPPORTED_MODULES.indexOf('trader') !== -1 && !process.env.TRAVI
             should.exist(err);
 
             err.message.should.have.string('$5');
-
-            done();
-          });
-        });
-
-        it('should fail when price not provided', function(done) {
-          traderPlugin.sell(minimalAmount, null, function(err) {
-            should.exist(err);
-
-            err.message.should.have.string('price');
 
             done();
           });
