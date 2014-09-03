@@ -50,7 +50,7 @@ if (pluginConfig.SUPPORTED_MODULES.indexOf('ticker') !== -1) {
     // });
 
     // NOTE: MAX timeout for each test
-    this.timeout(2000);
+    this.timeout(3000);
 
     // single supported currency fetch (as string)
     it('should read ticker in \'' + testedCurrencies[0] + '\'', function(done) {
