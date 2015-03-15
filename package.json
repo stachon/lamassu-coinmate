@@ -21,7 +21,7 @@
     "url": "https://github.com/lamassu/lamassu-bitstamp/issues"
   },
   "bin": {
-    "setup": "./setup"
+    "bitstamp-setup": "./setup"
   },
   "devDependencies": {
     "chai": "^1.9.1",
