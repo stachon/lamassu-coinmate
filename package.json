@@ -1,6 +1,6 @@
 {
   "name": "lamassu-bitstamp",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Lamassu Bitstamp ticker and trader",
   "main": "index.js",
   "scripts": {
@@ -20,6 +20,9 @@
   "bugs": {
     "url": "https://github.com/lamassu/lamassu-bitstamp/issues"
   },
+  "bin": {
+    "bitstamp-setup": "./setup"
+  },
   "devDependencies": {
     "chai": "^1.9.1",
     "mocha": "^1.21.4"
@@ -27,6 +30,8 @@
   "dependencies": {
     "async": "~0.2.10",
     "lodash": "^2.4.1",
-    "wreck": "^3.0.0"
+    "wreck": "^3.0.0",
+    "promptly": "~0.2.0",
+    "lamassu-config": "~1.0.0"
   }
 }
