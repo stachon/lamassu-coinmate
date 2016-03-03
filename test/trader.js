@@ -63,13 +63,13 @@ if(pluginConfig.SUPPORTED_MODULES.indexOf('trader') !== -1 && !process.env.TRAVI
 
       var balance = null;
       var minimalAmount = NaN;
-      var lastUsdPrice = NaN;
+      var lastEurPrice = NaN;
 
 
-      // NOTE: this is Bitstamp-specific
+      // NOTE: this is Coinmate-specific
       before(function(done) {
-        traderPlugin.ticker('USD', function(err, results) {
-          lastUsdPrice = results.USD.rates.ask;
+        traderPlugin.ticker('EUR', function(err, results) {
+          lastEurPrice = results.EUR.rates.ask;
 
           done(err);
         });
@@ -85,8 +85,8 @@ if(pluginConfig.SUPPORTED_MODULES.indexOf('trader') !== -1 && !process.env.TRAVI
       it('should return valid balance', function(done) {
         traderPlugin.balance(function(err, localBalance) {
           should.not.exist(err);
-          localBalance.USD.should.be.a('number');
-          isNaN(localBalance.USD).should.not.equal(true);
+          localBalance.EUR.should.be.a('number');
+          isNaN(localBalance.EUR).should.not.equal(true);
 
           localBalance.BTC.should.be.a('number');
           isNaN(localBalance.BTC).should.not.equal(true);
@@ -100,10 +100,10 @@ if(pluginConfig.SUPPORTED_MODULES.indexOf('trader') !== -1 && !process.env.TRAVI
       describe('Buy', function() {
         // NOTE: [amount === 0] and [amount < $5] produce different errors
         it('should fail when amount is zero', function(done) {
-          traderPlugin.purchase(0, {price:lastUsdPrice}, function(err) {
+          traderPlugin.purchase(0, null, function(err) {
             should.exist(err);
 
-            err.message.should.have.string('amount');
+            err.message.should.have.string('Minimum Order Size');
 
             done();
           });
@@ -111,40 +111,27 @@ if(pluginConfig.SUPPORTED_MODULES.indexOf('trader') !== -1 && !process.env.TRAVI
 
         it('should fail when amount too small', function(done) {
 
-          // NOTE: minimum allowed order is $5;
-          //       used '5.01' to accomodate possible price change
-          minimalAmount = (5.01 * 1e8) / lastUsdPrice;
+          // NOTE: minimum allowed order is 0.1 EUR;
+          //       used '0.12' to accomodate possible price change
+          minimalAmount = (0.12 * 1e8) / lastEurPrice;
           var tooSmallAmount = minimalAmount / 2;
 
-          traderPlugin.purchase(tooSmallAmount, {price:lastUsdPrice}, function(err) {
+          traderPlugin.purchase(tooSmallAmount, null, function(err) {
             should.exist(err);
 
-            err.message.should.have.string('$5');
+            err.message.should.have.string('0.1 EUR');
 
             done();
           });
         });
 
-        it('should fail when provided price is too high', function(done) {
-
-          var tooHighPrice = lastUsdPrice * 1.2;
-
-          traderPlugin.purchase(minimalAmount, {price:tooHighPrice}, function(err) {
-            should.exist(err);
-
-            err.message.should.have.string('20%');
-
-            done();
-          });
-        });
-
-        it('should have at least $5 on account', function() {
-          balance.USD.should.be.above(5);
+        it('should have at least 5 EUR on account', function() {
+          balance.EUR.should.be.above(5);
 
         });
 
         it('should successfully place order', function(done) {
-          traderPlugin.purchase(minimalAmount, {price:lastUsdPrice}, function(err) {
+          traderPlugin.purchase(minimalAmount, null, function(err) {
             should.not.exist(err);
 
             done();
@@ -155,10 +142,10 @@ if(pluginConfig.SUPPORTED_MODULES.indexOf('trader') !== -1 && !process.env.TRAVI
       describe('Sell', function() {
         // NOTE: [amount === 0] and [amount < $5] produce different errors
         it('should fail when amount is zero', function(done) {
-          traderPlugin.sell(0, {price:lastUsdPrice}, function(err) {
+          traderPlugin.sell(0, {price:lastEurPrice}, function(err) {
             should.exist(err);
 
-            err.message.should.have.string('amount');
+            err.message.should.have.string('Minimum Order Size');
 
             done();
           });
@@ -168,25 +155,25 @@ if(pluginConfig.SUPPORTED_MODULES.indexOf('trader') !== -1 && !process.env.TRAVI
 
           // NOTE: minimum allowed order is $5;
           //       used '5.01' to accomodate possible price change
-          minimalAmount = (5.01 * 1e8) / lastUsdPrice;
+          minimalAmount = (5.01 * 1e8) / lastEurPrice;
           var tooSmallAmount = minimalAmount / 2;
 
-          traderPlugin.sell(tooSmallAmount, {price:lastUsdPrice}, function(err) {
+          traderPlugin.sell(tooSmallAmount, null, function(err) {
             should.exist(err);
 
-            err.message.should.have.string('$5');
+            err.message.should.have.string('0.0002 BTC');
 
             done();
           });
         });
 
-        it('should have at least $5 *in BTC* on account', function() {
-          (balance.BTC/1e8).should.be.above(5/lastUsdPrice);
+        it('should have at least 5 EUR *in BTC* on account', function() {
+          (balance.EUR/1e8).should.be.above(5/lastEurPrice);
 
         });
 
         it('should successfully place order', function(done) {
-          traderPlugin.sell(minimalAmount, {price:lastUsdPrice}, function(err) {
+          traderPlugin.sell(minimalAmount, null, function(err) {
             should.not.exist(err);
 
             done();
