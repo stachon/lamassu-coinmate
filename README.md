@@ -1,14 +1,14 @@
-lamassu-bitstamp
+lamassu-coinmate
 ================
 
 [![Build Status](https://travis-ci.org/lamassu/lamassu-bitstamp.svg)](https://travis-ci.org/lamassu/lamassu-bitstamp)
 
-Lamassu Bitstamp ticker and trader
+Lamassu Coinmate ticker and trader
 
 
 ### Testing
 
-1. Open [`mockConfig.template.json`](https://github.com/lamassu/lamassu-bitstamp/blob/master/test/mockConfig.template.json) file, and input your Bitstamp [credentials](https://www.bitstamp.net/account/security/api/) there,
+1. Open `mockConfig.template.json` file, and input your Coinmate credentials there,
 2. Make sure to check there:
   - [x] Account balance,
   - [x] Buy limit order,

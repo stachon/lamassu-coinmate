@@ -7,7 +7,7 @@ var should        = require('chai').should();
 var pluginConfig  = require('../config');
 
 
-var testedCurrencies = ['USD', 'EUR'];
+var testedCurrencies = ['EUR'];
 
 
 // Checks structure and values of object returned by `.balance()`

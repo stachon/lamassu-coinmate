@@ -2,9 +2,9 @@
 
 var _ = require('lodash');
 
-exports.NAME = 'Bitstamp';
+exports.NAME = 'CoinMate';
 exports.SUPPORTED_MODULES = ['ticker', 'trader'];
-exports.API_ENDPOINT = 'https://www.bitstamp.net/api/';
+exports.API_ENDPOINT = 'https://coinmate.io/api/';
 
 
 exports.SATOSHI_FACTOR = 1e8;

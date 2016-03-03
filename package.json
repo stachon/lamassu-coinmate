@@ -1,24 +1,24 @@
 {
-  "name": "lamassu-bitstamp",
-  "version": "1.0.2",
-  "description": "Lamassu Bitstamp ticker and trader",
+  "name": "lamassu-coinmate",
+  "version": "1.0.0",
+  "description": "Lamassu Coinmate ticker and trader",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/lamassu/lamassu-bitstamp.git"
+    "url": "https://github.com/stachon/lamassu-coinmate.git"
   },
   "keywords": [
     "Lamassu",
-    "Bitstamp",
+    "Coinmate",
     "Bitcoin"
   ],
-  "author": "Lamassu (https://lamassu.is)",
+  "author": "Coinmate (https://coinmate.io)",
   "license": "unlicense",
   "bugs": {
-    "url": "https://github.com/lamassu/lamassu-bitstamp/issues"
+    "url": "https://github.com/stachon/lamassu-coinmate/issues"
   },
   "bin": {
     "bitstamp-setup": "./setup"

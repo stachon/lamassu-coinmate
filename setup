@@ -6,7 +6,7 @@ var promptly = require('promptly');
 
 var config = new LamassuConfig();
 
-console.log('\nSetting up the BitStamp ticker and trader plugin.\n');
+console.log('\nSetting up the Coinmate ticker and trader plugin.\n');
 console.log('Please enter your API credentials.\n');
 promptly.prompt('ID: ', function(clientIdErr, clientId) {
   promptly.prompt('API Key: ', function(keyErr, key) {
@@ -31,8 +31,8 @@ function updateDb(clientId, key, secret, callback) {
           }
         },
         current: {
-          ticker: 'bitstamp',
-          trade: 'bitstamp'
+          ticker: 'coinmate',
+          trade: 'coinmate'
         }
       }
     }
