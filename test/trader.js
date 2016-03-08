@@ -111,9 +111,7 @@ if(pluginConfig.SUPPORTED_MODULES.indexOf('trader') !== -1 && !process.env.TRAVI
 
         it('should fail when amount too small', function(done) {
 
-          // NOTE: minimum allowed order is 0.1 EUR;
-          //       used '0.12' to accomodate possible price change
-          minimalAmount = (0.12 * 1e8) / lastEurPrice;
+          minimalAmount = 0.11*1e8 / lastEurPrice;
           var tooSmallAmount = minimalAmount / 2;
 
           traderPlugin.purchase(tooSmallAmount, null, function(err) {
@@ -153,9 +151,8 @@ if(pluginConfig.SUPPORTED_MODULES.indexOf('trader') !== -1 && !process.env.TRAVI
 
         it('should fail when amount too small', function(done) {
 
-          // NOTE: minimum allowed order is $5;
-          //       used '5.01' to accomodate possible price change
-          minimalAmount = (5.01 * 1e8) / lastEurPrice;
+          // NOTE: minimum allowed order is 0.0002 BTC;
+          minimalAmount = 0.00021*1e8;
           var tooSmallAmount = minimalAmount / 2;
 
           traderPlugin.sell(tooSmallAmount, null, function(err) {
@@ -168,7 +165,7 @@ if(pluginConfig.SUPPORTED_MODULES.indexOf('trader') !== -1 && !process.env.TRAVI
         });
 
         it('should have at least 5 EUR *in BTC* on account', function() {
-          (balance.EUR/1e8).should.be.above(5/lastEurPrice);
+          (balance.EUR).should.be.above(5/lastEurPrice);
 
         });
 
