@@ -20,3 +20,20 @@ npm test
 > NOTE: Two last tests depend on your account having 5 EUR of available balance (both in EUR and BTC).
 
 ### Installation
+
+To install the module, go to your lamassu-machine folder and install lamassu-coinmate via npm:
+
+```bash
+cd /usr/local/lib/node_modules/lamassu-server/
+npm install lamassu-coinmate
+```
+
+Next, execute setup:
+
+```bash
+node_modules/lamassu-coinmate/setup
+```
+
+You will be asked to provide your CoinMate ID and keys. This will configure lamassu-server to use CoinMate for ticker and trading. The price will be ---.-- in admin panel, this is normal.
+
+You should also execute lamassu-set-locale to change the fiat currency to EUR.
