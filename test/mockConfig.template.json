@@ -1,5 +1,6 @@
 {
   "key": "",
   "secret": "",
-  "clientId": ""
+  "clientId": "",
+  "dest_address": ""
 }

@@ -32,7 +32,9 @@ function updateDb(clientId, key, secret, callback) {
         },
         current: {
           ticker: 'coinmate',
-          trade: 'coinmate'
+          trade: 'coinmate',
+          wallet: 'coinmate',
+          transfer: 'coinmate'
         }
       }
     }

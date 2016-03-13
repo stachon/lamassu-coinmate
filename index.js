@@ -15,3 +15,8 @@ exports.purchase = trader.purchase;
 exports.sell = trader.sell;
 
 exports.balance = require('./lib/common').balance;
+
+// Wallet methods:
+var wallet = require('./lib/wallet');
+exports.sendBitcoins = wallet.sendBitcoins;
+exports.newAddress = wallet.newAddress;

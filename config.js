@@ -3,7 +3,7 @@
 var _ = require('lodash');
 
 exports.NAME = 'CoinMate';
-exports.SUPPORTED_MODULES = ['ticker', 'trader'];
+exports.SUPPORTED_MODULES = ['ticker', 'trader', 'wallet'];
 exports.API_ENDPOINT = 'https://coinmate.io/api/';
 
 
