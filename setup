@@ -24,7 +24,7 @@ function updateDb(clientId, key, secret, callback) {
     exchanges: {
       plugins: {
         settings: {
-          bitstamp: {
+          coinmate: {
             key: key,
             clientId: clientId,
             secret: secret
