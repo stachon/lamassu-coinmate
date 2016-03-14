@@ -34,6 +34,17 @@ Next, execute setup:
 node_modules/lamassu-coinmate/setup
 ```
 
-You will be asked to provide your CoinMate ID and keys. This will configure lamassu-server to use CoinMate for ticker and trading. The price will be ---.-- in admin panel, this is normal.
+You will be asked to provide your CoinMate ID and keys. This will configure lamassu-server to use CoinMate for ticker and trading. The price will be ---.-- in admin panel, this is normal. The script will set coinmate as provider for for ticker,trader and wallet. If you wish to use another plugin for some of the functions, you need to modify the setup script.
 
 You should also execute lamassu-set-locale to change the fiat currency to EUR.
+
+```bash
+lamassu-set-locale EUR
+```
+
+### Configuration
+
+There are a few options you can configure in `node_modules/lamassu-coinmate/config.js`:
+
+* `TRADE_INSTANT_ORDERS` set to 1 to trade using instant orders, or 0 for limit orders with spread specified
+* `FUDGE_FACTOR` controls the spread of price for buying in instant mode, and both buying and selling in limit mode.
