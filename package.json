@@ -1,6 +1,6 @@
 {
   "name": "lamassu-coinmate",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Lamassu Coinmate plugin",
   "main": "index.js",
   "scripts": {
