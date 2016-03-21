@@ -111,13 +111,13 @@ if(pluginConfig.SUPPORTED_MODULES.indexOf('trader') !== -1 && !process.env.TRAVI
 
         it('should fail when amount too small', function(done) {
 
-          minimalAmount = 0.11*1e8 / lastEurPrice;
+          minimalAmount = 0.00021 *1e8;
           var tooSmallAmount = minimalAmount / 2;
 
           traderPlugin.purchase(tooSmallAmount, null, function(err) {
             should.exist(err);
 
-            err.message.should.have.string('0.1 EUR');
+            err.message.should.have.string('Minimum');
 
             done();
           });
