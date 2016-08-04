@@ -11,15 +11,17 @@ console.log('Please enter your API credentials.\n');
 promptly.prompt('ID: ', function(clientIdErr, clientId) {
   promptly.prompt('API Key: ', function(keyErr, key) {
     promptly.password('Secret: ', function(secretErr, secret) {
-      updateDb(clientId, key, secret, function(err) {
-        if (err) throw err;
-        console.log('\nSuccess.');
+      promptly.password('Fiat currency (EUR or CZK): ', function(fiatErr, fiatCurrency) {
+        updateDb(clientId, key, secret, fiatCurrency, function(err) {
+          if (err) throw err;
+          console.log('\nSuccess.');
+        });
       });
     });
   });
 });
 
-function updateDb(clientId, key, secret, callback) {
+function updateDb(clientId, key, secret, fiatCurrency, callback) {
   var newConfig = {
     exchanges: {
       plugins: {
@@ -27,7 +29,8 @@ function updateDb(clientId, key, secret, callback) {
           coinmate: {
             key: key,
             clientId: clientId,
-            secret: secret
+            secret: secret,
+            fiatCurrency: fiatCurrency
           }
         },
         current: {

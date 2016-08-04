@@ -2,5 +2,6 @@
   "key": "",
   "secret": "",
   "clientId": "",
-  "dest_address": ""
+  "dest_address": "",
+  "fiatCurrency": "EUR"
 }

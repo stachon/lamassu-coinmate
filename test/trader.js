@@ -17,7 +17,8 @@ function requireFresh(file) {
 var REQUIRED_MOCK_PROPERTIES = [
   'key',
   'secret',
-  'clientId'
+  'clientId',
+  'fiatCurrency',
 ];
 
 
@@ -86,6 +87,9 @@ if(pluginConfig.SUPPORTED_MODULES.indexOf('trader') !== -1 && !process.env.TRAVI
         traderPlugin.balance(function(err, localBalance) {
           should.not.exist(err);
           localBalance.EUR.should.be.a('number');
+          isNaN(localBalance.EUR).should.not.equal(true);
+
+          localBalance.CZK.should.be.a('number');
           isNaN(localBalance.EUR).should.not.equal(true);
 
           localBalance.BTC.should.be.a('number');
