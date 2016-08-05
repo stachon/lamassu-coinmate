@@ -20,9 +20,9 @@ exports.COINMATE_CURRENCIES = ['EUR', 'CZK'];
 exports.TRADE_INSTANT_ORDERS = 1; 
 
 // get currency pair name for API
-exports.currencyPairName = function currencyPairName(currency) {
+exports.currencyPairName = function (currency) {
   return "BTC_" + currency;
-}
+};
 
 exports.config = function config(localConfig) {
   if (localConfig) _.merge(exports, localConfig);
