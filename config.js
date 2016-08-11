@@ -4,8 +4,7 @@ var _ = require('lodash');
 
 exports.NAME = 'CoinMate';
 exports.SUPPORTED_MODULES = ['ticker', 'trader', 'wallet'];
-//exports.API_ENDPOINT = 'https://coinmate.io/api/';
-exports.API_ENDPOINT = 'https://104.45.25.164/api/';
+exports.API_ENDPOINT = 'https://coinmate.io/api/';
 
 exports.SATOSHI_FACTOR = 1e8;
 
